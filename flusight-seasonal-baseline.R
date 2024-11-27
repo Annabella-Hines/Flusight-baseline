@@ -72,7 +72,7 @@ states <- state_pop %>% pull(location)
 
 
 # NHSN data 2021-2024
-nhsn <- read_csv("../Documents/Data/Flu Admissions 21-24.csv")
+nhsn <- read_csv(paste0("C:/Users/",userid,"/Desktop/Github/Flusight-baseline/seasonal-historic/NHSN_pastdata.csv"))
 
 # Format NHSN data
 nhsn_rates <- nhsn %>%
@@ -290,7 +290,7 @@ peak_intensity <- calculate_kde_quantiles(combo)
 
 full <- bind_rows(peak_intensity, peak_week) %>% mutate(location=as.character(location))
 
-write.csv(full, file = paste0(output_dirpath,sprintf("%s-FluSight-base_seasonal.csv", reference_date)), row.names = FALSE)
+write.csv(full, file = paste0(output_dirpath,sprintf("%s-FluSight-base_seasonal.csv", reference_date)),row.names = FALSE)
 
 #write.csv(full, file = paste0(hub_outputpath,sprintf("%s-FluSight-seasonal-baseline.csv", reference_date)))
 
