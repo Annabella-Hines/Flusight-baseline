@@ -72,7 +72,7 @@ states <- state_pop %>% pull(location)
 
 
 # NHSN data 2021-2024
-nhsn <- read_csv("../Documents/Data/Flu Admissions 21-24.csv")
+nhsn <- read_csv(paste0("C:/Users/",userid,"/Desktop/Github/Flusight-baseline/seasonal-historic/NHSN_pastdata.csv"))
 
 # Format NHSN data
 nhsn_rates <- nhsn %>%
