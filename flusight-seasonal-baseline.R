@@ -35,7 +35,7 @@ epiweekToDate <- function(year, weekno) {
   start_date <- first_day_of_year + weeks(weekno - 1)
   
   # Adjust the start_date to the first Monday of the given week
-  weekday_start <- wday(start_date, week_start = 1)  # Week starts on Monday
+  weekday_start <- lubridate::wday(start_date, week_start = 1)  # Week starts on Monday
   
   # If the start date is not Monday, calculate the first Monday of the week
   if (weekday_start != 1) {
@@ -137,7 +137,7 @@ predict_peak_week <- function(these_data) {
     rowwise() %>%
     mutate(value = integrate(pkwk_kernel, bin_start_incl, bin_end_notincl)[[1]]) %>%
     ungroup() %>%
-    mutate(bin_start_incl = ifelse(bin_start_incl > 52, bin_start_incl - 52,
+    dplyr::mutate(bin_start_incl = ifelse(bin_start_incl > 52, bin_start_incl - 52,
                                    bin_start_incl),
            bin_end_notincl = ifelse(bin_end_notincl > 53, bin_end_notincl - 52,
                                     bin_end_notincl),
