@@ -14,12 +14,10 @@ library(lubridate)
 ##############################
 ## Configuration parameters ##
 ##############################
-#userid <- Sys.info()["user"]
-#output_dirpath <- paste0("C:/Users/",userid,"/Desktop/GitHub/Flusight-baseline/weekly-submission/forecasts/Flusight-baseline/")
-#cat_ouput_dir <- paste0("C:/Users/",userid,"/Desktop/GitHub/FluSight-forecast-hub/model-output/FluSight-equal_cat/")
+userid <- Sys.info()["user"]
+output_dirpath <- paste0("C:/Users/",userid,"/Desktop/GitHub/Flusight-baseline/weekly-submission/forecasts/Flusight-baseline/")
+cat_ouput_dir <- paste0("C:/Users/",userid,"/Desktop/GitHub/FluSight-forecast-hub/model-output/FluSight-equal_cat/")
 
-output_dirpath <- "weekly-submission/forecasts/Flusight-baseline/"
-cat_output_dir <- "weekly-submission/forecasts/Flusight-equal_cat/"
   
 ######################
 ## Helper functions ##
@@ -391,16 +389,15 @@ preds_formatted %>%
 # and then updates the dates to correspond with a submission with the upcoming Saturday as a reference
 # date. 
 
-#flat_cat_template <- read.csv(paste0("C:/Users/",userid,"/Desktop/GitHub/FluSight-forecast-hub/model-output/FluSight-equal_cat/2024-01-06-FluSight-equal_cat.csv"),header=T)
-flat_cat_template <- read.csv(file="weekly-submission/forecasts/Flusight-equal_cat/2024-04-13-FluSight-equal_cat.csv",header=T)
-         
+flat_cat_template <- read.csv(paste0("C:/Users/",userid,"/Desktop/GitHub/FluSight-forecast-hub/model-output/FluSight-equal_cat/2024-01-06-FluSight-equal_cat.csv"),header=T)
+
 # Find the next Saturday for updating reference_date
 (nsat<-today()+days(7-wday(today())))
 # Update reference_date and target_end_dates for horizon = 0,1,2,3 
 next_dates<-flat_cat_template %>% 
   mutate(reference_date=nsat,
          target_end_date=reference_date+weeks(horizon))
-write.csv(next_dates,file=paste0(cat_output_dir,"/",nsat,"-FluSight-equal_cat.csv"),row.names=FALSE)
+write.csv(next_dates,file=paste0(cat_ouput_dir,"/",nsat,"-FluSight-equal_cat.csv"),row.names=FALSE)
 
 ## Backup for manually entering a Saturday (e.g., past reference_date needed)
 # saturday<-ymd("2023-10-21")
