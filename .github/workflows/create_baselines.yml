@@ -1,0 +1,65 @@
+name: Create baselines
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Create Baselines'
+        required: false
+      publish:
+        description: 'Create baselines forecasts'
+        type: boolean
+        required: false
+        default: true
+  schedule:
+    - cron: "20 18 * * 3"
+
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+  create_baselines:
+    #if: github.repository_owner == 'cdcepi'
+    runs-on: macOS-latest
+    steps:    
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with: 
+          fetch-depth: 0
+      - name: Setup R 
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+      - name: Install dependencies
+        run: |
+          install.packages("pak")
+          pak::pkg_install(c(
+          "readr", "dplyr", "tidyr", "purrr",
+          "checkmate", "cli", "ggplot2", 
+          "plotly", "lubridate"))
+          pak::pkg_install(c(
+          "cmu-delphi/epidatr",
+          "cmu-delphi/epiprocess",
+          "cmu-delphi/epipredict"))
+        shell: Rscript {0}
+      - name: Generate baseline csv files
+        run:  Rscript flusight-baseline.R
+      - name: Generate seasonal baseline csv files
+        run:  Rscript flusight-seasonal-baseline.R
+      - name: Commit changes and create PR 🚀
+        if: ${{ inputs.publish || github.event_name == 'schedule' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_DATETIME=$(date +'%Y-%m-%d_%H-%M-%S')
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b create/baselines/"$PR_DATETIME"
+          git add .
+          git commit -m "Generate new baseline forecasts"
+          git push --set-upstream origin create/baselines/"$PR_DATETIME"
+          gh pr create --title "Add new baseline forecasts" \
+            --body "This PR adds new baseline forecasts." \
+            --base main \
+            --head create/baselines/"$PR_DATETIME"
+        shell: bash
