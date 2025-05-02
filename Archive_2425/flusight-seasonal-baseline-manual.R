@@ -11,10 +11,8 @@ library(checkmate)
 
 #specify output path
 userid <- Sys.info()["user"]
-#output_dirpath <- paste0("C:/Users/",userid,"/Desktop/GitHub/Flusight-baseline/weekly-submission/forecasts/Flusight-seasonal-baseline/")
+output_dirpath <- paste0("C:/Users/",userid,"/Desktop/GitHub/Flusight-baseline/weekly-submission/forecasts/Flusight-seasonal-baseline/")
 #hub_outputpath <- paste0("C:/Users/",userid,"/Desktop/Github/FluSight-forecast-hub/model-output/Flusight-seasonal-baseline/")
-
-output_dirpath <- "weekly-submission/forecasts/Flusight-seasonal-baseline/"
 
 #########################
 ## Functions
@@ -55,8 +53,7 @@ epiweekToDate <- function(year, weekno) {
 ## Load Data
 
 #FluSurv-NET data 2010/11 through 2019/20
-#flusurv_state <- read.csv(paste0("C:/Users/",userid,"/Desktop/Github/Flusight-baseline/seasonal-historic/FluSurv-NET_pastdata.csv"))
-flusurv_state <- read.csv("seasonal-historic/FluSurv-NET_pastdata.csv")
+flusurv_state <- read.csv(paste0("C:/Users/",userid,"/Desktop/Github/Flusight-baseline/seasonal-historic/FluSurv-NET_pastdata.csv"))
 fsn_data <- flusurv_state %>% 
   filter(AGE.CATEGORY=="Overall", SEX.CATEGORY=="Overall", RACE.CATEGORY=="Overall", VIRUS.TYPE.CATEGORY=="Overall") %>% 
   mutate(weekly_rate = as.numeric(WEEKLY.RATE)) %>% 
@@ -68,16 +65,14 @@ fsn_data <- flusurv_state %>%
 
 
 # State population data
-#state_pop<-read.csv(paste0("C:/Users/",userid,"/Desktop/GitHub/FluSight-forecast-hub/auxiliary-data/locations.csv")) %>% 
- # select(location, abbreviation, population)
-state_pop<-read.csv("https://raw.githubusercontent.com/cdcepi/FluSight-forecast-hub/main/auxiliary-data/locations.csv") %>% 
+state_pop<-read.csv(paste0("C:/Users/",userid,"/Desktop/GitHub/FluSight-forecast-hub/auxiliary-data/locations.csv")) %>% 
   select(location, abbreviation, population)
 # list of locations codes
 states <- state_pop %>% pull(location)
 
 
 # NHSN data 2021-2024
-nhsn <- read_csv("seasonal-historic/NHSN_pastdata.csv")
+nhsn <- read_csv(paste0("C:/Users/",userid,"/Desktop/Github/Flusight-baseline/seasonal-historic/NHSN_pastdata.csv"))
 
 # Format NHSN data
 nhsn_rates <- nhsn %>%
