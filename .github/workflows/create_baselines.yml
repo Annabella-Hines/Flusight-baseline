@@ -54,12 +54,9 @@ jobs:
           PR_DATETIME=$(date +'%Y-%m-%d_%H-%M-%S')
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b create/baselines/"$PR_DATETIME"
+          git checkout main
+          git pull origin main
           git add .
           git commit -m "Generate new baseline forecasts"
-          git push --set-upstream origin create/baselines/"$PR_DATETIME"
-          gh pr create --title "Add new baseline forecasts" \
-            --body "This PR adds new baseline forecasts." \
-            --base main \
-            --head create/baselines/"$PR_DATETIME"
+          git push origin main
         shell: bash
