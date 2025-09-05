@@ -69,16 +69,16 @@ fsn_data <- flusurv_state %>%
 
 # State population data
 #state_pop<-read.csv(paste0("C:/Users/",userid,"/Desktop/GitHub/FluSight-forecast-hub/auxiliary-data/locations.csv")) %>% 
-# select(location, abbreviation, population)
+ # select(location, abbreviation, population)
 state_pop<-read.csv("https://raw.githubusercontent.com/cdcepi/FluSight-forecast-hub/main/auxiliary-data/locations.csv") %>% 
   select(location, abbreviation, population)
 # list of locations codes
 states <- state_pop %>% pull(location)
 
 
-# NHSN data 2021-2025
-#nhsn <- read.csv(paste0("C:/Users/",userid,"/Desktop/Github/Flusight-baseline/seasonal-historic/NHSN_pastdata.csv"))
-nhsn <- read_csv("seasonal-historic/NHSN_pastdata.csv")
+# NHSN data 2021-2024
+#nhsn <- read.csv(paste0("C:/Users/",userid,"/Desktop/Github/Flusight-baseline/seasonal-historic/NHSN_pastdata_2425_archive.csv"))
+nhsn <- read_csv("seasonal-historic/NHSN_pastdata_2425_archive.csv")
 
 # Format NHSN data
 nhsn_rates <- nhsn %>%
@@ -86,8 +86,8 @@ nhsn_rates <- nhsn %>%
     date = mdy(date),  # Convert MM/DD/YYYY to Date
     epidemic_week = epiweek(date),  # Extract epidemic week using lubridate
     year = year(date)) %>% 
-  filter(epidemic_week <= 22 | epidemic_week >= 35) %>% 
-  mutate(week = ifelse(epidemic_week < 36, epidemic_week + 52, epidemic_week)) %>% 
+    filter(epidemic_week <= 22 | epidemic_week >= 35) %>% 
+    mutate(week = ifelse(epidemic_week < 36, epidemic_week + 52, epidemic_week)) %>% 
   group_by(state, year, epidemic_week,week) %>% # Aggregate by state and week
   summarise(
     total_flu_admissions = sum(admissions, na.rm = TRUE),
@@ -132,28 +132,28 @@ predict_peak_week <- function(these_data) {
     approxfun(rule = 1:2)
   
   #### Peak week forecasts
-  pkwk_pred <- tibble(reference_date = rep(reference_date, 32),
-                      target = rep("peak week inc flu hosp", 32),
-                      horizon = rep(NA,32),
-                      target_end_date = rep(NA, 32),
-                      output_type = rep("pmf", 32),
-                      unit = rep("week", 32),
-                      bin_start_incl = seq(42, 73, 1),
-                      bin_end_notincl = seq(43, 74, 1))%>%
+  pkwk_pred <- tibble(reference_date = rep(reference_date, 35),
+                      target = rep("peak week inc flu hosp", 35),
+                      horizon = rep(NA,35),
+                      target_end_date = rep(NA, 35),
+                      output_type = rep("pmf", 35),
+                      unit = rep("week", 35),
+                      bin_start_incl = seq(40, 74, 1),
+                      bin_end_notincl = seq(41, 75, 1))%>%
     rowwise() %>%
     mutate(value = integrate(pkwk_kernel, bin_start_incl, bin_end_notincl)[[1]]) %>%
     ungroup() %>%
     dplyr::mutate(bin_start_incl = ifelse(bin_start_incl > 52, bin_start_incl - 52,
-                                          bin_start_incl),
-                  bin_end_notincl = ifelse(bin_end_notincl > 53, bin_end_notincl - 52,
-                                           bin_end_notincl),
-                  year = ifelse(bin_start_incl >= 40, 2025, 2026),  # Assign year based on epidemic week
-                  output_type_id = as.Date(mapply(epiweekToDate, year, bin_start_incl)),
-                  value = value / sum(value)) %>% 
+                                   bin_start_incl),
+           bin_end_notincl = ifelse(bin_end_notincl > 53, bin_end_notincl - 52,
+                                    bin_end_notincl),
+           year = ifelse(bin_start_incl >= 40, 2024, 2025),  # Assign year based on epidemic week
+           output_type_id = as.Date(mapply(epiweekToDate, year, bin_start_incl)),
+           value = value / sum(value)) %>% 
     rename(epidemic_week = bin_start_incl) %>% 
     select(-c(bin_end_notincl, year, unit)) %>% 
     select(-value, everything(), value)
-  
+    
   return(pkwk_pred)
 }
 
@@ -163,21 +163,21 @@ peak_week <- predict_peak_week(combo)
 
 #########################
 # Redistributing Probabilities
-##The distribution was calculated across weeks 40-52 and 1-22 to encompass a typical influenza season, and the below code
-##redistributes the probabilities of weeks not included in the current season's FluSight Challenge to the remaining weeks.
+  ##The distribution was calculated across weeks 40-52 and 1-22 to encompass a typical influenza season, and the below code
+  ##redistributes the probabilities of weeks not included in the current season's FluSight Challenge to the remaining weeks.
 
-# Define the weeks to remove (weeks 40-41 and 19-22)
-removed_weeks <- c(40:41, 22)
-# Define the remaining weeks (weeks 42-52 and 1-21)
-remaining_weeks <- c(42:52, 1:21)
+  # Define the weeks to remove (weeks 40-46)
+  removed_weeks <- 40:46
+  # Define the remaining weeks (weeks 47-52 and 1-22)
+  remaining_weeks <- c(47:52, 1:22)
 
 #Function for reallocation
 redistribute_probabilities <- function(data, removed_weeks, remaining_weeks) {
   
-  # Step 1: Calculate the total probability of the removed weeks
+  # Step 1: Calculate the total probability of the removed weeks (40-46)
   removed_prob_sum <- sum(data$value[data$epidemic_week %in% removed_weeks])
   
-  # Step 2: Calculate the total probability of the remaining weeks
+  # Step 2: Calculate the total probability of the remaining weeks (47-52, 1-22)
   remaining_prob_sum <- sum(data$value[data$epidemic_week%in% remaining_weeks])
   
   # Step 3: Proportional redistribution of the removed probability across the remaining weeks
@@ -189,7 +189,7 @@ redistribute_probabilities <- function(data, removed_weeks, remaining_weeks) {
   data$value[data$epidemic_week %in% remaining_weeks] <- adjusted_remaining_probs
   
   # Step 5: Remove remaining weeks and epidemic week column
-  data <- data %>% filter(!epidemic_week %in%removed_weeks) %>% 
+  data <- data %>% filter(epidemic_week!= removed_weeks) %>% 
     select(-epidemic_week)
   
   # Return updated data
@@ -197,7 +197,6 @@ redistribute_probabilities <- function(data, removed_weeks, remaining_weeks) {
 }
 
 peak_week <- redistribute_probabilities(peak_week, removed_weeks, remaining_weeks)
-
 
 # Repeat for each state
 peak_week <- peak_week %>% 
@@ -216,78 +215,78 @@ quantiles <- c(0.01, 0.025, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4,
 
 calculate_kde_quantiles <- function(data){
   
-  # Loop through each week, but skip those with fewer than 2 data points
-  kde_results <- list()
+# Loop through each week, but skip those with fewer than 2 data points
+kde_results <- list()
+
+for (week_num in 40:72) {
+  # Filter data for the current week
+  week_data <- data %>% filter(week == week_num)
   
-  for (week_num in 40:72) {
-    # Filter data for the current week
-    week_data <- data %>% filter(week == week_num)
-    
-    # Skip weeks with fewer than 2 data points
-    if (nrow(week_data) < 2) {
-      next  # Skip this week if not enough data points
-    }
-    
-    # Ensure that WEEKLY.RATE is numeric
-    week_data$weekly_rate <- as.numeric(week_data$weekly_rate)
-    
-    # Fit the kernel density estimate (bandwidth chosen automatically)
-    kde <- tryCatch(
-      density(week_data$weekly_rate, bw = "SJ"),
-      error = function(e) NULL  # Catch errors and assign NULL if the calculation fails
-    )
-    
-    # If the KDE was successful, store the result
-    if (!is.null(kde)) {
-      kde_results[[week_num]] <- kde
-    }
+  # Skip weeks with fewer than 2 data points
+  if (nrow(week_data) < 2) {
+    next  # Skip this week if not enough data points
   }
   
-  # Create a data frame to store the quantile results
-  quantile_predictions <- data.frame(
-    week = rep(40:72, each = length(quantiles)),
-    quantile = rep(quantiles, times = length(40:72)),
-    value = NA
+  # Ensure that WEEKLY.RATE is numeric
+  week_data$weekly_rate <- as.numeric(week_data$weekly_rate)
+  
+  # Fit the kernel density estimate (bandwidth chosen automatically)
+  kde <- tryCatch(
+    density(week_data$weekly_rate, bw = "SJ"),
+    error = function(e) NULL  # Catch errors and assign NULL if the calculation fails
   )
   
-  # Loop through each filtered week and calculate the quantiles from the KDE
-  for (week_num in 40:72) {
-    # Get the KDE for the current week
-    kde <- kde_results[[week_num]]
-    
-    # Check if there is a valid KDE
-    if (!is.null(kde)) {
-      # Calculate the quantiles based on the KDE's cumulative distribution
-      for (q in quantiles) {
-        # Calculate the quantile from the cumulative distribution
-        quantile_predictions$value[quantile_predictions$week == week_num & 
-                                     quantile_predictions$quantile == q] <- 
-          quantile(kde$x, probs = q)
-      }
+  # If the KDE was successful, store the result
+  if (!is.null(kde)) {
+    kde_results[[week_num]] <- kde
+  }
+}
+
+# Create a data frame to store the quantile results
+quantile_predictions <- data.frame(
+  week = rep(40:72, each = length(quantiles)),
+  quantile = rep(quantiles, times = length(40:72)),
+  value = NA
+)
+
+# Loop through each filtered week and calculate the quantiles from the KDE
+for (week_num in 40:72) {
+  # Get the KDE for the current week
+  kde <- kde_results[[week_num]]
+  
+  # Check if there is a valid KDE
+  if (!is.null(kde)) {
+    # Calculate the quantiles based on the KDE's cumulative distribution
+    for (q in quantiles) {
+      # Calculate the quantile from the cumulative distribution
+      quantile_predictions$value[quantile_predictions$week == week_num & 
+                                      quantile_predictions$quantile == q] <- 
+        quantile(kde$x, probs = q)
     }
   }
-  
-  # Calculate the peak intensity for each quantile
-  peak_intensity <- quantile_predictions %>%
-    group_by(quantile) %>%
-    summarize(value = max(value, na.rm = TRUE)) %>% # Handle NA values
-    rename("output_type_id"="quantile") %>% 
-    mutate(reference_date=reference_date,
-           target = "peak inc flu hosp", 
-           horizon = NA,
-           target_end_date = NA,
-           output_type = "quantile") %>%
-    # Expand the grid by repeating the original data for each state
-    crossing(location = states) %>% 
-    arrange(location)%>% 
-    left_join(state_pop, by = c("location" = "location")) %>% 
-    mutate(value = round((value * population) / 100000),
-           output_type_id = as.character(output_type_id)) %>% 
-    select(-c(population, abbreviation)) %>% 
-    select(reference_date, target,horizon, target_end_date, location, output_type, output_type_id, value)
-  
-  # Return peak intensity
-  return(peak_intensity = peak_intensity)
+}
+
+# Calculate the peak intensity for each quantile
+peak_intensity <- quantile_predictions %>%
+  group_by(quantile) %>%
+  summarize(value = max(value, na.rm = TRUE)) %>% # Handle NA values
+  rename("output_type_id"="quantile") %>% 
+  mutate(reference_date=reference_date,
+         target = "peak inc flu hosp", 
+         horizon = NA,
+         target_end_date = NA,
+         output_type = "quantile") %>%
+  # Expand the grid by repeating the original data for each state
+  crossing(location = states) %>% 
+  arrange(location)%>% 
+  left_join(state_pop, by = c("location" = "location")) %>% 
+  mutate(value = round((value * population) / 100000),
+         output_type_id = as.character(output_type_id)) %>% 
+  select(-c(population, abbreviation)) %>% 
+  select(reference_date, target,horizon, target_end_date, location, output_type, output_type_id, value)
+
+# Return peak intensity
+return(peak_intensity = peak_intensity)
 }
 
 peak_intensity <- calculate_kde_quantiles(combo)
@@ -300,3 +299,4 @@ full <- bind_rows(peak_intensity, peak_week) %>% mutate(location=as.character(lo
 write.csv(full, file = paste0(output_dirpath,sprintf("%s-FluSight-base_seasonal.csv", reference_date)),row.names = FALSE)
 
 #write.csv(full, file = paste0(hub_outputpath,sprintf("%s-FluSight-seasonal-baseline.csv", reference_date)))
+
