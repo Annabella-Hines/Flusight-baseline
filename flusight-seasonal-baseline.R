@@ -132,14 +132,14 @@ predict_peak_week <- function(these_data) {
     approxfun(rule = 1:2)
   
   #### Peak week forecasts
-  pkwk_pred <- tibble(reference_date = rep(reference_date, 29),
-                      target = rep("peak week inc flu hosp", 29),
-                      horizon = rep(NA,29),
-                      target_end_date = rep(NA, 29),
-                      output_type = rep("pmf", 29),
-                      unit = rep("week", 29),
-                      bin_start_incl = seq(42, 70, 1),
-                      bin_end_notincl = seq(43, 71, 1))%>%
+  pkwk_pred <- tibble(reference_date = rep(reference_date, 32),
+                      target = rep("peak week inc flu hosp", 32),
+                      horizon = rep(NA,32),
+                      target_end_date = rep(NA, 32),
+                      output_type = rep("pmf", 32),
+                      unit = rep("week", 32),
+                      bin_start_incl = seq(42, 73, 1),
+                      bin_end_notincl = seq(43, 74, 1))%>%
     rowwise() %>%
     mutate(value = integrate(pkwk_kernel, bin_start_incl, bin_end_notincl)[[1]]) %>%
     ungroup() %>%
@@ -167,9 +167,9 @@ peak_week <- predict_peak_week(combo)
 ##redistributes the probabilities of weeks not included in the current season's FluSight Challenge to the remaining weeks.
 
 # Define the weeks to remove (weeks 40-41 and 19-22)
-removed_weeks <- c(40:41, 19:22)
-# Define the remaining weeks (weeks 42-52 and 1-18)
-remaining_weeks <- c(42:52, 1:18)
+removed_weeks <- c(40:41, 22)
+# Define the remaining weeks (weeks 42-52 and 1-21)
+remaining_weeks <- c(42:52, 1:21)
 
 #Function for reallocation
 redistribute_probabilities <- function(data, removed_weeks, remaining_weeks) {

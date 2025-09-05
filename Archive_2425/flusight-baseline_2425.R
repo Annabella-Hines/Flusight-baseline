@@ -20,7 +20,7 @@ library(lubridate)
 
 output_dirpath <- "weekly-submission/forecasts/Flusight-baseline/"
 cat_output_dir <- "weekly-submission/forecasts/Flusight-equal_cat/"
-
+  
 ######################
 ## Helper functions ##
 ######################
@@ -54,7 +54,6 @@ location_to_abbr <- function(location) {
 abbr_to_location <- function(abbr) {
   location_abbr_dictionary$location[match(abbr, location_abbr_dictionary$abbr)]
 }
-
 
 ###############################
 ## Fetch, prepare input data ##
@@ -368,254 +367,20 @@ sample_preds_formatted <- subsamples %>%
     value
   )
 
-###############################
-### ED Visit Baseline #########
-###############################
-## Fetch, prepare input data ##
-###############################
-
-target_tbl_col_spec <- cols_only(
-  date = col_date(format = ""),
-  location = col_character(),
-  location_name = col_character(),
-  value = col_double())
-
-# Latest version of reporting mirrored at cdcepi/FluSight-forecast-hub@main:
-target_tbl <- readr::read_csv(
-  "https://raw.githubusercontent.com/cdcepi/FluSight-forecast-hub/main/target-data/target-ed-visits-prop.csv",
-  col_types = target_tbl_col_spec
-) 
-
-# We'll also filter out some early time values below when training the model.
-
-target_edf <- target_tbl %>%
-  transmute(
-    geo_value = location_to_abbr(location),
-    time_value = .data$date,
-    weekly_count = .data$value
-  ) %>%
-  as_epi_df()
-
-# Implied date settings:
-forecast_as_of_date <- Sys.Date()
-reference_date <- curr_else_next_date_with_ltwday(forecast_as_of_date, 6L) # Saturday
-
-# Validation:
-desired_max_time_value <- reference_date - 7L
-
-# * that we're not running too late:
-max_time_value <- max(target_edf$time_value)
-if (max_time_value > desired_max_time_value) {
-  cli_abort("
-    The target data run through a max time value of {max_time_value},
-    but we were expecting them to run only through {desired_max_time_value}
-    in order to make predictions at forecast date {forecast_as_of_date},
-    reference date {reference_date}.
-  ")
-}
-
-# * that data's not running too late / we're not running too early:
-excess_latency_tbl <- target_edf %>%
-  drop_na(weekly_count) %>%
-  group_by(geo_value) %>%
-  summarize(
-    max_time_value = max(time_value),
-    .groups = "drop"
-  ) %>%
-  mutate(
-    excess_latency =
-      pmax(
-        as.integer(desired_max_time_value - max_time_value) %/% 7L,
-        0L
-      ),
-    has_excess_latency = excess_latency > 0L
-  )
-excess_latency_small_tbl <- excess_latency_tbl %>%
-  filter(has_excess_latency)
-
-prop_locs_overlatent_err_thresh <- 0.20
-prop_locs_overlatent <- mean(excess_latency_tbl$has_excess_latency)
-if (prop_locs_overlatent > prop_locs_overlatent_err_thresh) {
-  cli_abort("
-    More than {100*prop_locs_overlatent_err_thresh}% of locations have excess
-    latency. The reference date is {reference_date} so we desire observations at
-    least through {desired_max_time_value}. However,
-    {nrow(excess_latency_small_tbl)} location{?s} had excess latency and did not
-    have reporting through that date: {excess_latency_small_tbl$geo_value}.
-  ")
-} else if (prop_locs_overlatent > 0) {
-  cli_abort("
-    Some locations have excess latency. The reference date is {reference_date}
-    so we desire observations at least through {desired_max_time_value}.
-    However, {nrow(excess_latency_small_tbl)} location{?s} had excess latency
-    and did not have reporting through that date:
-    {excess_latency_small_tbl$geo_value}.
-  ")
-}
-
-######################
-## Prepare baseline ##
-######################
-
-imposed_min_time_value <- as.Date("2022-08-06") # 2022EW31 Sat
-#
-# ^ For seasons through 2023/2024, this was instead 2021-12-04. For 2024/2025,
-# it has been updated to exclude the low activity during 2021/2022. EW31 was
-# selected as a boundary between 2021/2022 and 2022/2023 to nearly-evenly divide
-# up off-season weeks and to include the full 2022/2023 season ramp-up, though
-# this also includes more flat off-season weeks.
-
-pause_min_time_value <- as.Date("2024-04-27") + 7L # Sat
-pause_max_time_value <- as.Date("2024-11-09") - 7L # Sat
-
-n_output_trajectories <- 100L
-
-# For reproducibility, run with a particular RNG configuration. Make seed the
-# same for all runs for the same `reference_date`, but different for different
-# `reference_date`s. (It's probably not necessary to change seeds between
-# `reference_date`s, though, since we use a large number of simulations so even
-# if we sample the same quantile level trajectories, it won't be noticeable. The
-# `%% 1e9` is also not necessary unless more seed-setting dependencies are added
-# that would take us beyond R's integer max value.)
-rng_seed <- as.integer((59460707 + as.numeric(reference_date)) %% 2e9)
-withr::with_rng_version("4.0.0", withr::with_seed(rng_seed, {
-  # Temporary approach to grab trajectory samples from epipredict without
-  # requiring epipredict update:
-  subsamples_by_geo <- list()
-  trace(epipredict:::propagate_samples, exit = quote({
-    n <- 1L
-    e <- rlang::caller_env(n)
-    while(! ".data" %in% names(e)) {
-      n <- n + 1L
-      e <- rlang::caller_env(n)
-      if (identical(e, globalenv()) || identical(e, emptyenv())) {
-        cli::cli_abort("Failed to find the target geo_value to attach to this trajectory sample.")
-      }
-    }
-    target_geo <- e$.data$geo_value
-    sample_by_horizon <- res
-  #   # sample_by_horizon is sorted by horizon 0 draws, so we can't just take the
-  #   # first n_output_trajectories of them; subsample instead:
-    selected_trajectory_inds <- sample.int(length(sample_by_horizon[[1L]]), n_output_trajectories)
-    subsample_by_horizon <- lapply(sample_by_horizon, `[`, selected_trajectory_inds)
-  #   # Ensure non-negative:
-    subsample_by_horizon <- lapply(subsample_by_horizon, pmax, 0L)
-  #   # Prepare sample ids; the ith draw for each of the horizons belong to the
-  #   # same sample, so they should have the same sample id; sampling is performed
-  #   # separately for each geo, so different geos should have different sets of
-  #   # ids:
-    subsample_ids_every_horizon <- paste0(target_geo, "_s", seq_len(n_output_trajectories))
-    subsample <- tibble(
-      geo_value = target_geo,
-      horizon = seq_along(subsample_by_horizon) - 1L,
-      output_type_id = rep(list(subsample_ids_every_horizon), length(horizon)),
-      value = subsample_by_horizon
-    ) %>%
-      unchop(c(output_type_id, value))
-    .GlobalEnv[["subsamples_by_geo"]] <- c(.GlobalEnv[["subsamples_by_geo"]], list(subsample))
-  }))
-
-  # Forecasts for all but the -1 horizon, in `epipredict`'s forecast output
-  # format. We will want to edit some of the labeling and add horizon -1, so we
-  # won't use this directly.
-  fcst <- cdc_baseline_forecaster(
-    target_edf %>%
-      filter(time_value >= imposed_min_time_value) %>%
-      filter(!between(time_value, pause_min_time_value, pause_max_time_value)) %>%
-      # Don't use interim/preliminary data past the `desired_max_time_value`
-      # (shouldn't do anything if we raised an error earlier on about
-      # unexpectedly low latency):
-      filter(time_value <= desired_max_time_value),
-    "weekly_count",
-    cdc_baseline_args_list(
-      # The `aheads` are specified relative to the most recent available
-      # `time_value` available. Since our `data_frequency` is 1 week (the
-      # default), the aheads are in terms of weeks.
-      aheads = 1:4,
-      nsims = 1e5,
-      # (defaults for everything else)
-    )
-  )
-  # Extract the predictions in `epipredict` format, and add horizon -1
-  # predictions:
-  preds <- fcst$predictions %>%
-    # epipredict infers a "`forecast_date`" equal to, and indexes aheads
-    # relative to, the max `time_value` available, which is off from the
-    # labeling we want due to data latency, but gives us the desired model and
-    # `target_dates`. Instead, let the `forecast_date` be the `reference_date`
-    # and index aheads relative to it:
-    mutate(
-      forecast_date = .env$reference_date,
-      ahead = as.integer(.data$target_date - .env$reference_date) %/% 7L
-    ) %>%
-    bind_rows(
-      # Prepare -1 horizon predictions:
-      target_edf %>%
-        # Pretend that excess latency, either in the form of missing rows or
-        # NAs, doesn't exist; the last available week will be treated as if it
-        # ended on `desired_max_time_value`:
-        drop_na(weekly_count) %>%
-        group_by(geo_value) %>% 
-        slice_max(time_value, n=1) %>%
-        ungroup() %>% 
-        transmute(
-          # Like in the preceding rows of `preds`, we will let `forecast_date`
-          # be the `reference_date` and index aheads relative to it:
-          forecast_date = .env$reference_date,
-          target_date = .env$reference_date - 7L,
-          ahead = -1L,
-          geo_value,
-          .pred = weekly_count,
-          # Degenerate (deterministic) distributions:
-          .pred_distn = dist_quantiles(
-            values = map(
-              weekly_count, rep,
-              length(cdc_baseline_args_list()$quantile_levels)
-            ),
-            quantile_levels = cdc_baseline_args_list()$quantile_levels
-          )
-        )
-    )
-}))
-
-
-###################
-## Format, write ##
-###################
-
-quantile_ed_preds_formatted <- preds %>%
-  flusight_hub_formatter(
-    target = "wk inc flu prop ed visits",
-    output_type = "quantile"
-  ) %>%
-  drop_na(output_type_id) %>%
-  arrange(target, horizon, location) %>%
-  # dplyr::mutate(
-  #   value = ifelse(output_type_id < 0.5, floor(value), ceiling(value))  # Round value based on output_type_id
-  # ) %>%
-  dplyr::mutate(
-    output_type_id = as.character(output_type_id)
-  ) %>%
-  dplyr::select(
-    reference_date, horizon, target, target_end_date, location,
-    output_type, output_type_id, value
-  )
-
-fil <- quantile_ed_preds_formatted %>% filter(horizon==-1, location=="US")
-preds_formatted_full <- bind_rows(list(
+preds_formatted <- bind_rows(list(
   quantile_preds_formatted,
-  sample_preds_formatted,
-  quantile_ed_preds_formatted
+  sample_preds_formatted
 ))
 
 if (!dir.exists(output_dirpath)) {
   dir.create(output_dirpath, recursive = TRUE)
 }
-preds_formatted_full %>%
+preds_formatted %>%
   write_csv(file.path(
     output_dirpath,
     sprintf("%s-FluSight-baseline.csv", reference_date)
   ))
+
 
 
 ###########################################################
@@ -628,7 +393,7 @@ preds_formatted_full %>%
 
 #flat_cat_template <- read.csv(paste0("C:/Users/",userid,"/Desktop/GitHub/FluSight-forecast-hub/model-output/FluSight-equal_cat/2024-01-06-FluSight-equal_cat.csv"),header=T)
 flat_cat_template <- read.csv(file="weekly-submission/forecasts/Flusight-equal_cat/2024-04-13-FluSight-equal_cat.csv",header=T)
-
+         
 # Find the next Saturday for updating reference_date
 (nsat<-today()+days(7-wday(today())))
 # Update reference_date and target_end_dates for horizon = 0,1,2,3 
