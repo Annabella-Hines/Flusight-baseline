@@ -609,11 +609,7 @@ preds_formatted_full <- bind_rows(list(
   sample_preds_formatted,
   quantile_ed_preds_formatted
 )) %>% ##add this for Iowa until data is released
-  mutate(
-    value = if_else(
-      as.character(location) == "19",
-      NA_real_,
-      value))
+  filter(as.character(location) != "19")
 
 if (!dir.exists(output_dirpath)) {
   dir.create(output_dirpath, recursive = TRUE)

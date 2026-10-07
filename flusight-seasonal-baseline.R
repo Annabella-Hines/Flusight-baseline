@@ -199,7 +199,8 @@ predict_peak_week <- function(these_data) {
                   value = value / sum(value)) %>% 
     rename(epidemic_week = bin_start_incl) %>% 
     select(-c(bin_end_notincl, year, unit)) %>% 
-    select(-value, everything(), value)
+    select(-value, everything(), value) %>% 
+    select(-epidemic_week)
   
   return(pkwk_pred)
 }
