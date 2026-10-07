@@ -406,7 +406,8 @@ desired_max_time_value <- reference_date - 7L
 # * that we're not running too late:
 max_time_value <- max(target_edf$time_value)
 if (max_time_value > desired_max_time_value) {
-  cli_abort("
+  #cli_abort("
+  cli_warn("
     The target data run through a max time value of {max_time_value},
     but we were expecting them to run only through {desired_max_time_value}
     in order to make predictions at forecast date {forecast_as_of_date},
@@ -606,7 +607,12 @@ preds_formatted_full <- bind_rows(list(
   quantile_preds_formatted,
   sample_preds_formatted,
   quantile_ed_preds_formatted
-))
+)) %>% ##add this for Iowa until data is released
+  mutate(
+    value = if_else(
+      as.character(location) == "19",
+      NA_real_,
+      value))
 
 if (!dir.exists(output_dirpath)) {
   dir.create(output_dirpath, recursive = TRUE)
