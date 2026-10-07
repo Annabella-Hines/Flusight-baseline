@@ -406,8 +406,7 @@ desired_max_time_value <- reference_date - 7L
 # * that we're not running too late:
 max_time_value <- max(target_edf$time_value)
 if (max_time_value > desired_max_time_value) {
-  #cli_abort("
-  cli_warn("
+  cli_abort("
     The target data run through a max time value of {max_time_value},
     but we were expecting them to run only through {desired_max_time_value}
     in order to make predictions at forecast date {forecast_as_of_date},
@@ -437,7 +436,8 @@ excess_latency_small_tbl <- excess_latency_tbl %>%
 prop_locs_overlatent_err_thresh <- 0.20
 prop_locs_overlatent <- mean(excess_latency_tbl$has_excess_latency)
 if (prop_locs_overlatent > prop_locs_overlatent_err_thresh) {
-  cli_abort("
+  #cli_abort("
+  cli_warn("
     More than {100*prop_locs_overlatent_err_thresh}% of locations have excess
     latency. The reference date is {reference_date} so we desire observations at
     least through {desired_max_time_value}. However,
@@ -445,7 +445,8 @@ if (prop_locs_overlatent > prop_locs_overlatent_err_thresh) {
     have reporting through that date: {excess_latency_small_tbl$geo_value}.
   ")
 } else if (prop_locs_overlatent > 0) {
-  cli_abort("
+  #cli_abort("
+  cli_warn("
     Some locations have excess latency. The reference date is {reference_date}
     so we desire observations at least through {desired_max_time_value}.
     However, {nrow(excess_latency_small_tbl)} location{?s} had excess latency
