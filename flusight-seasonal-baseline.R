@@ -332,6 +332,9 @@ calculate_kde_quantiles <- function(data){
     }
   }
   
+  quantile_predictions <- quantile_predictions %>%
+    mutate(value = pmax(value, 0))
+  
   # Calculate the peak intensity for each quantile
   peak_intensity <- quantile_predictions %>%
     group_by(quantile) %>%
