@@ -344,29 +344,6 @@ reference_date,horizon,target,target_end_date,location,output_type,output_type_i
 2026-10-10,-1,wk inc flu hosp,2026-10-03,18,quantile,0.95,58
 2026-10-10,-1,wk inc flu hosp,2026-10-03,18,quantile,0.975,58
 2026-10-10,-1,wk inc flu hosp,2026-10-03,18,quantile,0.99,58
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.01,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.025,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.05,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.1,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.15,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.2,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.25,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.3,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.35,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.4,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.45,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.5,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.55,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.6,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.65,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.7,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.75,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.8,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.85,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.9,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.95,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.975,NA
-2026-10-10,-1,wk inc flu hosp,2026-10-03,19,quantile,0.99,NA
 2026-10-10,-1,wk inc flu hosp,2026-10-03,20,quantile,0.01,12
 2026-10-10,-1,wk inc flu hosp,2026-10-03,20,quantile,0.025,12
 2026-10-10,-1,wk inc flu hosp,2026-10-03,20,quantile,0.05,12
@@ -1563,29 +1540,6 @@ reference_date,horizon,target,target_end_date,location,output_type,output_type_i
 2026-10-10,0,wk inc flu hosp,2026-10-10,18,quantile,0.95,241
 2026-10-10,0,wk inc flu hosp,2026-10-10,18,quantile,0.975,320
 2026-10-10,0,wk inc flu hosp,2026-10-10,18,quantile,0.99,412
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.01,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.025,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.05,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.1,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.15,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.2,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.25,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.3,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.35,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.4,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.45,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.5,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.55,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.6,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.65,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.7,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.75,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.8,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.85,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.9,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.95,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.975,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,quantile,0.99,NA
 2026-10-10,0,wk inc flu hosp,2026-10-10,20,quantile,0.01,0
 2026-10-10,0,wk inc flu hosp,2026-10-10,20,quantile,0.025,0
 2026-10-10,0,wk inc flu hosp,2026-10-10,20,quantile,0.05,0
@@ -2782,29 +2736,6 @@ reference_date,horizon,target,target_end_date,location,output_type,output_type_i
 2026-10-10,1,wk inc flu hosp,2026-10-17,18,quantile,0.95,320
 2026-10-10,1,wk inc flu hosp,2026-10-17,18,quantile,0.975,396
 2026-10-10,1,wk inc flu hosp,2026-10-17,18,quantile,0.99,485
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.01,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.025,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.05,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.1,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.15,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.2,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.25,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.3,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.35,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.4,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.45,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.5,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.55,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.6,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.65,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.7,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.75,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.8,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.85,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.9,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.95,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.975,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,quantile,0.99,NA
 2026-10-10,1,wk inc flu hosp,2026-10-17,20,quantile,0.01,0
 2026-10-10,1,wk inc flu hosp,2026-10-17,20,quantile,0.025,0
 2026-10-10,1,wk inc flu hosp,2026-10-17,20,quantile,0.05,0
@@ -4001,29 +3932,6 @@ reference_date,horizon,target,target_end_date,location,output_type,output_type_i
 2026-10-10,2,wk inc flu hosp,2026-10-24,18,quantile,0.95,368
 2026-10-10,2,wk inc flu hosp,2026-10-24,18,quantile,0.975,454
 2026-10-10,2,wk inc flu hosp,2026-10-24,18,quantile,0.99,539
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.01,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.025,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.05,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.1,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.15,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.2,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.25,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.3,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.35,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.4,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.45,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.5,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.55,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.6,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.65,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.7,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.75,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.8,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.85,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.9,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.95,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.975,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,quantile,0.99,NA
 2026-10-10,2,wk inc flu hosp,2026-10-24,20,quantile,0.01,0
 2026-10-10,2,wk inc flu hosp,2026-10-24,20,quantile,0.025,0
 2026-10-10,2,wk inc flu hosp,2026-10-24,20,quantile,0.05,0
@@ -5220,29 +5128,6 @@ reference_date,horizon,target,target_end_date,location,output_type,output_type_i
 2026-10-10,3,wk inc flu hosp,2026-10-31,18,quantile,0.95,409
 2026-10-10,3,wk inc flu hosp,2026-10-31,18,quantile,0.975,491
 2026-10-10,3,wk inc flu hosp,2026-10-31,18,quantile,0.99,587
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.01,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.025,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.05,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.1,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.15,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.2,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.25,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.3,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.35,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.4,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.45,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.5,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.55,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.6,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.65,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.7,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.75,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.8,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.85,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.9,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.95,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.975,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,quantile,0.99,NA
 2026-10-10,3,wk inc flu hosp,2026-10-31,20,quantile,0.01,0
 2026-10-10,3,wk inc flu hosp,2026-10-31,20,quantile,0.025,0
 2026-10-10,3,wk inc flu hosp,2026-10-31,20,quantile,0.05,0
@@ -22494,406 +22379,6 @@ reference_date,horizon,target,target_end_date,location,output_type,output_type_i
 2026-10-10,3,wk inc flu hosp,2026-10-31,11,sample,dc_s98,0
 2026-10-10,3,wk inc flu hosp,2026-10-31,11,sample,dc_s99,73
 2026-10-10,3,wk inc flu hosp,2026-10-31,11,sample,dc_s100,0
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s1,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s2,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s3,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s4,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s5,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s6,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s7,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s8,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s9,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s10,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s11,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s12,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s13,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s14,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s15,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s16,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s17,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s18,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s19,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s20,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s21,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s22,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s23,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s24,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s25,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s26,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s27,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s28,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s29,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s30,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s31,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s32,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s33,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s34,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s35,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s36,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s37,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s38,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s39,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s40,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s41,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s42,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s43,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s44,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s45,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s46,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s47,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s48,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s49,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s50,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s51,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s52,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s53,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s54,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s55,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s56,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s57,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s58,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s59,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s60,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s61,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s62,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s63,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s64,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s65,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s66,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s67,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s68,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s69,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s70,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s71,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s72,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s73,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s74,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s75,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s76,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s77,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s78,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s79,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s80,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s81,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s82,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s83,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s84,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s85,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s86,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s87,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s88,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s89,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s90,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s91,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s92,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s93,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s94,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s95,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s96,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s97,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s98,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s99,NA
-2026-10-10,0,wk inc flu hosp,2026-10-10,19,sample,ia_s100,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s1,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s2,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s3,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s4,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s5,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s6,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s7,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s8,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s9,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s10,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s11,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s12,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s13,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s14,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s15,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s16,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s17,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s18,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s19,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s20,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s21,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s22,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s23,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s24,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s25,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s26,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s27,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s28,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s29,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s30,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s31,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s32,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s33,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s34,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s35,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s36,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s37,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s38,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s39,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s40,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s41,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s42,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s43,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s44,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s45,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s46,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s47,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s48,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s49,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s50,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s51,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s52,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s53,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s54,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s55,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s56,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s57,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s58,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s59,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s60,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s61,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s62,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s63,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s64,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s65,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s66,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s67,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s68,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s69,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s70,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s71,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s72,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s73,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s74,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s75,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s76,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s77,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s78,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s79,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s80,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s81,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s82,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s83,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s84,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s85,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s86,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s87,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s88,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s89,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s90,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s91,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s92,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s93,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s94,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s95,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s96,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s97,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s98,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s99,NA
-2026-10-10,1,wk inc flu hosp,2026-10-17,19,sample,ia_s100,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s1,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s2,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s3,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s4,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s5,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s6,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s7,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s8,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s9,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s10,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s11,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s12,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s13,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s14,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s15,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s16,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s17,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s18,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s19,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s20,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s21,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s22,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s23,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s24,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s25,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s26,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s27,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s28,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s29,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s30,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s31,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s32,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s33,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s34,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s35,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s36,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s37,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s38,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s39,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s40,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s41,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s42,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s43,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s44,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s45,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s46,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s47,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s48,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s49,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s50,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s51,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s52,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s53,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s54,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s55,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s56,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s57,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s58,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s59,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s60,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s61,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s62,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s63,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s64,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s65,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s66,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s67,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s68,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s69,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s70,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s71,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s72,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s73,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s74,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s75,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s76,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s77,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s78,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s79,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s80,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s81,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s82,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s83,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s84,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s85,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s86,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s87,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s88,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s89,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s90,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s91,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s92,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s93,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s94,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s95,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s96,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s97,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s98,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s99,NA
-2026-10-10,2,wk inc flu hosp,2026-10-24,19,sample,ia_s100,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s1,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s2,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s3,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s4,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s5,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s6,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s7,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s8,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s9,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s10,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s11,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s12,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s13,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s14,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s15,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s16,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s17,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s18,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s19,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s20,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s21,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s22,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s23,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s24,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s25,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s26,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s27,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s28,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s29,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s30,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s31,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s32,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s33,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s34,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s35,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s36,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s37,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s38,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s39,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s40,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s41,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s42,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s43,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s44,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s45,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s46,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s47,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s48,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s49,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s50,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s51,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s52,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s53,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s54,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s55,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s56,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s57,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s58,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s59,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s60,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s61,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s62,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s63,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s64,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s65,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s66,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s67,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s68,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s69,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s70,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s71,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s72,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s73,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s74,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s75,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s76,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s77,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s78,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s79,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s80,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s81,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s82,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s83,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s84,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s85,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s86,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s87,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s88,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s89,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s90,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s91,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s92,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s93,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s94,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s95,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s96,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s97,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s98,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s99,NA
-2026-10-10,3,wk inc flu hosp,2026-10-31,19,sample,ia_s100,NA
 2026-10-10,0,wk inc flu hosp,2026-10-10,12,sample,fl_s1,607
 2026-10-10,0,wk inc flu hosp,2026-10-10,12,sample,fl_s2,541
 2026-10-10,0,wk inc flu hosp,2026-10-10,12,sample,fl_s3,559
@@ -27639,29 +27124,6 @@ reference_date,horizon,target,target_end_date,location,output_type,output_type_i
 2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,18,quantile,0.95,0.003
 2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,18,quantile,0.975,0.003
 2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,18,quantile,0.99,0.003
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.01,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.025,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.05,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.1,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.15,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.2,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.25,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.3,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.35,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.4,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.45,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.5,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.55,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.6,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.65,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.7,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.75,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.8,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.85,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.9,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.95,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.975,NA
-2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,19,quantile,0.99,NA
 2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,20,quantile,0.01,0.0022
 2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,20,quantile,0.025,0.0022
 2026-10-10,-1,wk inc flu prop ed visits,2026-10-03,20,quantile,0.05,0.0022
@@ -28835,29 +28297,6 @@ reference_date,horizon,target,target_end_date,location,output_type,output_type_i
 2026-10-10,0,wk inc flu prop ed visits,2026-10-10,18,quantile,0.95,0.018524999999999944
 2026-10-10,0,wk inc flu prop ed visits,2026-10-10,18,quantile,0.975,0.027082499999999985
 2026-10-10,0,wk inc flu prop ed visits,2026-10-10,18,quantile,0.99,0.032716999999999996
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.01,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.025,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.05,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.1,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.15,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.2,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.25,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.3,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.35,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.4,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.45,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.5,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.55,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.6,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.65,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.7,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.75,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.8,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.85,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.9,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.95,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.975,NA
-2026-10-10,0,wk inc flu prop ed visits,2026-10-10,19,quantile,0.99,NA
 2026-10-10,0,wk inc flu prop ed visits,2026-10-10,20,quantile,0.01,0
 2026-10-10,0,wk inc flu prop ed visits,2026-10-10,20,quantile,0.025,0
 2026-10-10,0,wk inc flu prop ed visits,2026-10-10,20,quantile,0.05,0
@@ -30031,29 +29470,6 @@ reference_date,horizon,target,target_end_date,location,output_type,output_type_i
 2026-10-10,1,wk inc flu prop ed visits,2026-10-17,18,quantile,0.95,0.026956582515825153
 2026-10-10,1,wk inc flu prop ed visits,2026-10-17,18,quantile,0.975,0.032395151276512706
 2026-10-10,1,wk inc flu prop ed visits,2026-10-17,18,quantile,0.99,0.03957152940529409
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.01,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.025,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.05,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.1,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.15,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.2,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.25,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.3,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.35,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.4,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.45,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.5,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.55,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.6,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.65,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.7,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.75,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.8,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.85,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.9,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.95,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.975,NA
-2026-10-10,1,wk inc flu prop ed visits,2026-10-17,19,quantile,0.99,NA
 2026-10-10,1,wk inc flu prop ed visits,2026-10-17,20,quantile,0.01,0
 2026-10-10,1,wk inc flu prop ed visits,2026-10-17,20,quantile,0.025,0
 2026-10-10,1,wk inc flu prop ed visits,2026-10-17,20,quantile,0.05,0
@@ -31227,29 +30643,6 @@ reference_date,horizon,target,target_end_date,location,output_type,output_type_i
 2026-10-10,2,wk inc flu prop ed visits,2026-10-24,18,quantile,0.95,0.030983949139491387
 2026-10-10,2,wk inc flu prop ed visits,2026-10-24,18,quantile,0.975,0.03670587303373031
 2026-10-10,2,wk inc flu prop ed visits,2026-10-24,18,quantile,0.99,0.04646989456894576
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.01,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.025,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.05,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.1,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.15,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.2,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.25,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.3,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.35,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.4,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.45,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.5,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.55,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.6,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.65,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.7,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.75,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.8,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.85,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.9,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.95,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.975,NA
-2026-10-10,2,wk inc flu prop ed visits,2026-10-24,19,quantile,0.99,NA
 2026-10-10,2,wk inc flu prop ed visits,2026-10-24,20,quantile,0.01,0
 2026-10-10,2,wk inc flu prop ed visits,2026-10-24,20,quantile,0.025,0
 2026-10-10,2,wk inc flu prop ed visits,2026-10-24,20,quantile,0.05,0
@@ -32423,29 +31816,6 @@ reference_date,horizon,target,target_end_date,location,output_type,output_type_i
 2026-10-10,3,wk inc flu prop ed visits,2026-10-31,18,quantile,0.95,0.033626001810018034
 2026-10-10,3,wk inc flu prop ed visits,2026-10-31,18,quantile,0.975,0.04166899511495136
 2026-10-10,3,wk inc flu prop ed visits,2026-10-31,18,quantile,0.99,0.05131318260182592
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.01,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.025,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.05,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.1,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.15,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.2,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.25,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.3,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.35,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.4,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.45,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.5,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.55,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.6,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.65,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.7,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.75,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.8,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.85,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.9,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.95,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.975,NA
-2026-10-10,3,wk inc flu prop ed visits,2026-10-31,19,quantile,0.99,NA
 2026-10-10,3,wk inc flu prop ed visits,2026-10-31,20,quantile,0.01,0
 2026-10-10,3,wk inc flu prop ed visits,2026-10-31,20,quantile,0.025,0
 2026-10-10,3,wk inc flu prop ed visits,2026-10-31,20,quantile,0.05,0
