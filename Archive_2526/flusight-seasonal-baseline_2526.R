@@ -76,7 +76,7 @@ state_pop<-read.csv("https://raw.githubusercontent.com/cdcepi/FluSight-forecast-
 states <- state_pop %>% pull(location)
 
 
-# NHSN data 2021-2026
+# NHSN data 2021-2025
 #nhsn <- read.csv(paste0("C:/Users/",userid,"/Desktop/Github/Flusight-baseline/seasonal-historic/NHSN_pastdata.csv"))
 nhsn <- read_csv("seasonal-historic/NHSN_pastdata.csv")
 
@@ -111,53 +111,6 @@ combo<- rbind(fsn_data, nhsn_rates) %>% filter(!is.na(weekly_rate))
 
 ####################
 ##Peak Week Function
-##25-26 version
-# predict_peak_week <- function(these_data) {
-#   
-#   # Create data table of peak weeks across years
-#   these_peaks <- these_data %>%
-#     group_by(season, location) %>%
-#     mutate(observation = round(weekly_rate, 1)) %>%
-#     filter(observation == max(observation, na.rm = TRUE)) %>%
-#     ungroup() 
-#   
-#   # Generate function approximating kernel of past peak values
-#   pkwk_kernel <- these_peaks %>%
-#     pull(week) %>%
-#     density(kernel = "gaussian", bw = "sj", from = min(these_data$week)) %>%
-#     approxfun(rule = 1:2)
-#   
-#   pkper_kernel <- these_peaks %>%
-#     pull(weekly_rate) %>%
-#     density(kernel = "gaussian", bw = "sj", from = min(these_data$weekly_rate)) %>%
-#     approxfun(rule = 1:2)
-#   
-#   #### Peak week forecasts
-#   pkwk_pred <- tibble(reference_date = rep(reference_date, 27),
-#                       target = rep("peak week inc flu hosp", 27),
-#                       horizon = rep(NA,27),
-#                       target_end_date = rep(NA, 27),
-#                       output_type = rep("pmf", 27),
-#                       unit = rep("week", 27),
-#                       bin_start_incl = seq(47, 73, 1),
-#                       bin_end_notincl = seq(48, 74, 1))%>%
-#     rowwise() %>%
-#     mutate(value = integrate(pkwk_kernel, bin_start_incl, bin_end_notincl)[[1]]) %>%
-#     ungroup() %>%
-#     dplyr::mutate(bin_start_incl = ifelse(bin_start_incl > 52, bin_start_incl - 52,
-#                                           bin_start_incl),
-#                   bin_end_notincl = ifelse(bin_end_notincl > 53, bin_end_notincl - 52,
-#                                            bin_end_notincl),
-#                   year = ifelse(bin_start_incl >= 40, 2026, 2027),  # Assign year based on epidemic week
-#                   output_type_id = as.Date(mapply(epiweekToDate, year, bin_start_incl)),
-#                   value = value / sum(value)) %>% 
-#     rename(epidemic_week = bin_start_incl) %>% 
-#     select(-c(bin_end_notincl, year, unit)) %>% 
-#     select(-value, everything(), value)
-#   
-#   return(pkwk_pred)
-# }
-
 predict_peak_week <- function(these_data) {
   
   # Create data table of peak weeks across years
@@ -179,14 +132,14 @@ predict_peak_week <- function(these_data) {
     approxfun(rule = 1:2)
   
   #### Peak week forecasts
-  pkwk_pred <- tibble(reference_date = rep(reference_date, 34),
-                      target = rep("peak week inc flu hosp", 34),
-                      horizon = rep(NA,34),
-                      target_end_date = rep(NA, 34),
-                      output_type = rep("pmf", 34),
-                      unit = rep("week", 34),
-                      bin_start_incl = seq(41, 74, 1),
-                      bin_end_notincl = seq(42, 75, 1))%>%
+  pkwk_pred <- tibble(reference_date = rep(reference_date, 27),
+                      target = rep("peak week inc flu hosp", 27),
+                      horizon = rep(NA,27),
+                      target_end_date = rep(NA, 27),
+                      output_type = rep("pmf", 27),
+                      unit = rep("week", 27),
+                      bin_start_incl = seq(47, 73, 1),
+                      bin_end_notincl = seq(48, 74, 1))%>%
     rowwise() %>%
     mutate(value = integrate(pkwk_kernel, bin_start_incl, bin_end_notincl)[[1]]) %>%
     ungroup() %>%
@@ -194,7 +147,7 @@ predict_peak_week <- function(these_data) {
                                           bin_start_incl),
                   bin_end_notincl = ifelse(bin_end_notincl > 53, bin_end_notincl - 52,
                                            bin_end_notincl),
-                  year = ifelse(bin_start_incl >= 40, 2026, 2027),  # Assign year based on epidemic week
+                  year = ifelse(bin_start_incl >= 40, 2025, 2026),  # Assign year based on epidemic week
                   output_type_id = as.Date(mapply(epiweekToDate, year, bin_start_incl)),
                   value = value / sum(value)) %>% 
     rename(epidemic_week = bin_start_incl) %>% 
@@ -204,46 +157,46 @@ predict_peak_week <- function(these_data) {
   return(pkwk_pred)
 }
 
-
 peak_week <- predict_peak_week(combo)
 
 
+
 #########################
-# Redistributing Probabilities used in 25-26
+# Redistributing Probabilities
 ##The distribution was calculated across weeks 40-52 and 1-22 to encompass a typical influenza season, and the below code
 ##redistributes the probabilities of weeks not included in the current season's FluSight Challenge to the remaining weeks.
 
 # Define the weeks to remove (weeks 40-41 and 19-22)
-# removed_weeks <- c(40:46, 22)
-# # Define the remaining weeks (weeks 42-52 and 1-21)
-# remaining_weeks <- c(47:52, 1:21)
-# 
-# #Function for reallocation
-# redistribute_probabilities <- function(data, removed_weeks, remaining_weeks) {
-#   
-#   # Step 1: Calculate the total probability of the removed weeks
-#   removed_prob_sum <- sum(data$value[data$epidemic_week %in% removed_weeks])
-#   
-#   # Step 2: Calculate the total probability of the remaining weeks
-#   remaining_prob_sum <- sum(data$value[data$epidemic_week%in% remaining_weeks])
-#   
-#   # Step 3: Proportional redistribution of the removed probability across the remaining weeks
-#   # Calculate the proportional redistribution for each remaining week
-#   adjusted_remaining_probs <- data$value[data$epidemic_week %in% remaining_weeks] + 
-#     (removed_prob_sum * data$value[data$epidemic_week %in% remaining_weeks] / remaining_prob_sum)
-#   
-#   # Step 4: Update the probabilities for the remaining weeks
-#   data$value[data$epidemic_week %in% remaining_weeks] <- adjusted_remaining_probs
-#   
-#   # Step 5: Remove remaining weeks and epidemic week column
-#   data <- data %>% filter(!epidemic_week %in%removed_weeks) %>% 
-#     select(-epidemic_week)
-#   
-#   # Return updated data
-#   return(data)
-# }
-# 
-# peak_week <- redistribute_probabilities(peak_week, removed_weeks, remaining_weeks)
+removed_weeks <- c(40:46, 22)
+# Define the remaining weeks (weeks 42-52 and 1-21)
+remaining_weeks <- c(47:52, 1:21)
+
+#Function for reallocation
+redistribute_probabilities <- function(data, removed_weeks, remaining_weeks) {
+  
+  # Step 1: Calculate the total probability of the removed weeks
+  removed_prob_sum <- sum(data$value[data$epidemic_week %in% removed_weeks])
+  
+  # Step 2: Calculate the total probability of the remaining weeks
+  remaining_prob_sum <- sum(data$value[data$epidemic_week%in% remaining_weeks])
+  
+  # Step 3: Proportional redistribution of the removed probability across the remaining weeks
+  # Calculate the proportional redistribution for each remaining week
+  adjusted_remaining_probs <- data$value[data$epidemic_week %in% remaining_weeks] + 
+    (removed_prob_sum * data$value[data$epidemic_week %in% remaining_weeks] / remaining_prob_sum)
+  
+  # Step 4: Update the probabilities for the remaining weeks
+  data$value[data$epidemic_week %in% remaining_weeks] <- adjusted_remaining_probs
+  
+  # Step 5: Remove remaining weeks and epidemic week column
+  data <- data %>% filter(!epidemic_week %in%removed_weeks) %>% 
+    select(-epidemic_week)
+  
+  # Return updated data
+  return(data)
+}
+
+peak_week <- redistribute_probabilities(peak_week, removed_weeks, remaining_weeks)
 
 
 # Repeat for each state
@@ -305,28 +258,11 @@ calculate_kde_quantiles <- function(data){
     # Check if there is a valid KDE
     if (!is.null(kde)) {
       # Calculate the quantiles based on the KDE's cumulative distribution
-      # for (q in quantiles) {
-      #   # Calculate the quantile from the cumulative distribution
-      #   quantile_predictions$value[quantile_predictions$week == week_num &
-      #                                quantile_predictions$quantile == q] <-
-      #     quantile(kde$x, probs = q)
-      # }
-      dx <- kde$x[2] - kde$x[1]
-
-      cdf <- cumsum(kde$y * dx)
-      cdf <- cdf / max(cdf)
-
-      kde_quantile <- approxfun(
-        cdf,
-        kde$x,
-        rule = 2
-      )
-
       for (q in quantiles) {
-        quantile_predictions$value[
-          quantile_predictions$week == week_num &
-            quantile_predictions$quantile == q
-        ] <- kde_quantile(q)
+        # Calculate the quantile from the cumulative distribution
+        quantile_predictions$value[quantile_predictions$week == week_num & 
+                                     quantile_predictions$quantile == q] <- 
+          quantile(kde$x, probs = q)
       }
     }
   }
@@ -355,6 +291,7 @@ calculate_kde_quantiles <- function(data){
 }
 
 peak_intensity <- calculate_kde_quantiles(combo)
+
 
 ##Export csv
 
